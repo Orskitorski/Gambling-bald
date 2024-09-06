@@ -1,9 +1,9 @@
 import random
 
+bet = int(input("How much do you want to bet?"))
+
 computerDice = random.randrange(1, 6)
 print("The computer rolled a: " , computerDice)
-
-bet = input("How much do you want to bet?")
 
 guess = input("Do you want to guess higher '+', lower '-' or equal? '='")
 
@@ -16,17 +16,17 @@ playerDice = random.randrange(1, 6)
 print("You rolled a: " , playerDice)
 
 if playerDice > computerDice and guess == "+":
-    winAmount = int (bet * ((6 - computerDice) + 1))
-    print("not fag")
+    winAmount = bet * (6 - int (computerDice) + 1)
+    print("You won!!!")
     print (winAmount)
 elif playerDice < computerDice and guess == "-":
-    winAmount = int (bet * ((6 - computerDice) + 1))
-    print("not fag")
+    winAmount = bet * (0 +  int (computerDice) + 1)
+    print("You won!!!")
     print (winAmount)
 elif playerDice == computerDice and guess == "=":
-    winAmount = int (bet * ((6 - computerDice) + 1))
-    print("not fag")
+    winAmount = bet * 10000
+    print("You won!!!")
     print (winAmount)
 else:
-    print("fag")
+    print("You lose fucker")
     
