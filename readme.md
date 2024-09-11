@@ -9,3 +9,4 @@ Sedan slår datorn en tärning, utifrån den tärningen får du gissa om ditt t�
 Gissar du rätt vinner du en mängd pengar beroende på hur mycket högre eller lägre än datorn du slog (mer extrem differens = mer extrem vinst) Att gissa lika ger dig mycket mer pengar om du vinner.
 
 Förlorar du så förlorar du allt.
+

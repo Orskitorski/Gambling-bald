@@ -1,20 +1,34 @@
 import random
 
 isPlaying = True
+money = 100
 
 while isPlaying:
 
-    bet = int(input("How much do you want to bet?"))
+    betIsCorrect = False
+    guessIsCorrect = False
+    yesOrNoIsCorrect = False
+
+    while betIsCorrect == False:
+        bet = int(input("How much do you want to bet?"))
+        if bet > money:
+            print("You dont have that much money")
+        else:
+            betIsCorrect = True
+            money -= bet
+            print(money)
+
 
     computerDice = random.randrange(1, 6)
     print("The computer rolled a: " , computerDice)
 
-    guess = input("Do you want to guess higher '+', lower '-' or equal? '='")
+    while guessIsCorrect == False:
+        guess = input("Do you want to guess higher '+', lower '-' or equal? '='")
+        if guess != "+" or guess != "-" or guess != "=":
+            print("You can only guess '+' , '-' or '='")
+        else:
+            guessIsCorrect = True
 
-    values = ("-", "+", "=")
-
-    if guess != "+" or guess != "-" or guess != "=":
-        print("")
 
     playerDice = random.randrange(1, 6)
     print("You rolled a: " , playerDice)
@@ -31,9 +45,18 @@ while isPlaying:
     else:
         print("You lose fucker")
 
-    yesOrNo = input("Do you want to play again? y/n")
+
+    while yesOrNoIsCorrect == False:
+        yesOrNo = input("Do you want to play again? y/n")
+        if yesOrNo != "y" or guess != "n":
+            print("Answer only with 'y' or 'n' stupid")
+        else:
+            yesOrNoIsCorrect = True
+
     if yesOrNo == ("n"):
         isPlaying = False
-    else:
+    elif yesOrNo == ("y"):
         isPlaying = True
-    
+
+
+
