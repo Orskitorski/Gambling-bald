@@ -1,32 +1,39 @@
 import random
 
-bet = int(input("How much do you want to bet?"))
+isPlaying = True
 
-computerDice = random.randrange(1, 6)
-print("The computer rolled a: " , computerDice)
+while isPlaying:
 
-guess = input("Do you want to guess higher '+', lower '-' or equal? '='")
+    bet = int(input("How much do you want to bet?"))
 
-values = ("-", "+", "=")
+    computerDice = random.randrange(1, 6)
+    print("The computer rolled a: " , computerDice)
 
-if guess != "+" or guess != "-" or guess != "=":
-    print("")
+    guess = input("Do you want to guess higher '+', lower '-' or equal? '='")
 
-playerDice = random.randrange(1, 6)
-print("You rolled a: " , playerDice)
+    values = ("-", "+", "=")
 
-if playerDice > computerDice and guess == "+":
-    winAmount = bet * (6 - int (computerDice) + 1)
-    print("You won!!!")
-    print (winAmount)
-elif playerDice < computerDice and guess == "-":
-    winAmount = bet * (0 +  int (computerDice) + 1)
-    print("You won!!!")
-    print (winAmount)
-elif playerDice == computerDice and guess == "=":
-    winAmount = bet * 10000
-    print("You won!!!")
-    print (winAmount)
-else:
-    print("You lose fucker")
+    if guess != "+" or guess != "-" or guess != "=":
+        print("")
+
+    playerDice = random.randrange(1, 6)
+    print("You rolled a: " , playerDice)
+
+    if int(playerDice) > int(computerDice) and guess == "+":
+        winAmount = int(bet) * (int(playerDice) - int(computerDice))
+        print("You won: " , winAmount)
+    elif int(playerDice) < int(computerDice) and guess == "-":
+        winAmount = int(bet) * (int(computerDice) - int(playerDice))
+        print("You won: " , winAmount)
+    elif int(playerDice) == int(computerDice) and guess == "=":
+        winAmount = int(bet) * 10000
+        print("You won: " , winAmount)
+    else:
+        print("You lose fucker")
+
+    yesOrNo = input("Do you want to play again? y/n")
+    if yesOrNo == ("n"):
+        isPlaying = False
+    else:
+        isPlaying = True
     
