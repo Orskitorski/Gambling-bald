@@ -10,3 +10,14 @@ Gissar du rätt vinner du en mängd pengar beroende på hur mycket högre eller 
 
 Förlorar du så förlorar du allt.
 
+Exempel:
+
+Spelaren satsar 100
+
+datorn slår en 5:a
+
+spelaren gissar på "-" (alltså lägre än datorns slag)
+
+spelaren slår en 2:a
+
+spelarens gissning är rätt och spelaren vinner 300
