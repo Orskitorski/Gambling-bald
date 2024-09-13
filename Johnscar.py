@@ -1,62 +1,98 @@
 import random
+import colorterminal
+import time
+import os
 
 isPlaying = True
-money = 100
 
 while isPlaying:
 
-    betIsCorrect = False
-    guessIsCorrect = False
-    yesOrNoIsCorrect = False
+    print(colorterminal.ColorText.BLUE + 'Welcome to' + colorterminal.ColorText.PURPLE + ' Gambling-Bald' + colorterminal.ColorText.BLUE + '!!!')
 
-    while betIsCorrect == False:
-        bet = int(input("How much do you want to bet?"))
-        if bet > money:
-            print("You dont have that much money")
-        else:
-            betIsCorrect = True
-            money -= bet
-            print(money)
-
+    print()
+    print(colorterminal.ColorText.WHITE + 'How much do you want to bet?')
+    bet = int(input(colorterminal.ColorText.WHITE))
+    
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("|")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("⟋")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("―")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("⟍")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("|")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("⟋")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("―")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("⟍")
+    os.system('cls||clear')
 
     computerDice = random.randrange(1, 6)
-    print("The computer rolled a: " , computerDice)
 
-    while guessIsCorrect == False:
-        guess = input("Do you want to guess higher '+', lower '-' or equal? '='")
-        if guess != "+" or guess != "-" or guess != "=":
-            print("You can only guess '+' , '-' or '='")
-        else:
-            guessIsCorrect = True
+    print("The computer rolled a: " , colorterminal.ColorText.PURPLE + str(computerDice))
 
+    print()
+    print(colorterminal.ColorText.WHITE + "Do you want to guess higher " + colorterminal.ColorText.RED + "+" +  colorterminal.ColorText.WHITE + ", lower " + colorterminal.ColorText.BLUE + "-" + colorterminal.ColorText.WHITE + " or equal? " + colorterminal.ColorText.GREEN + "=")
+    guess = input(colorterminal.ColorText.WHITE)
+
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("|")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("⟋")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("―")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("⟍")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("|")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("⟋")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("―")
+    time.sleep(0.2)
+    os.system('cls||clear')
+    print("⟍")
+    os.system('cls||clear')
 
     playerDice = random.randrange(1, 6)
-    print("You rolled a: " , playerDice)
+    print("You rolled a: " , colorterminal.ColorText.PURPLE + str(playerDice))
+    print(colorterminal.ColorText.WHITE)
 
     if int(playerDice) > int(computerDice) and guess == "+":
         winAmount = int(bet) * (int(playerDice) - int(computerDice))
-        print("You won: " , winAmount)
+        print("You won: " , colorterminal.ColorText.YELLOW + str(winAmount))
     elif int(playerDice) < int(computerDice) and guess == "-":
         winAmount = int(bet) * (int(computerDice) - int(playerDice))
-        print("You won: " , winAmount)
+        print("You won: " , colorterminal.ColorText.YELLOW + str(winAmount))
     elif int(playerDice) == int(computerDice) and guess == "=":
         winAmount = int(bet) * 10000
-        print("You won: " , winAmount)
+        print("You won: " , colorterminal.ColorText.YELLOW + str(winAmount))
     else:
-        print("You lose fucker")
+        print(colorterminal.ColorText.RED + "You lose fucker")
 
+    print()
 
-    while yesOrNoIsCorrect == False:
-        yesOrNo = input("Do you want to play again? y/n")
-        if yesOrNo != "y" or guess != "n":
-            print("Answer only with 'y' or 'n' stupid")
-        else:
-            yesOrNoIsCorrect = True
-
+    yesOrNo = input(colorterminal.ColorText.BEREZOVY + "Do you want to play again? y/n")
     if yesOrNo == ("n"):
         isPlaying = False
-    elif yesOrNo == ("y"):
+    else:
         isPlaying = True
-
-
-
